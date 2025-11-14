@@ -3,13 +3,15 @@ using Zeniata.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Banco Oracle + EF Core
+// Configuração do banco Oracle
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"))
            .LogTo(Console.WriteLine, LogLevel.Information));
 
-// Controllers
+// Serviços principais
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Versionamento da API
 builder.Services.AddApiVersioning(options =>
@@ -19,11 +21,7 @@ builder.Services.AddApiVersioning(options =>
     options.ReportApiVersions = true;
 });
 
-// Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-// 🟢 Adicionar CORS
+// CORS liberado
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -34,19 +32,17 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// Middleware principal
+app.UseStaticFiles();
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Zeniata API v1");
+    options.RoutePrefix = string.Empty; // Swagger na raiz
+});
 
-app.UseHttpsRedirection();
-
-// 🟢 Usar CORS
 app.UseCors("AllowAll");
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
