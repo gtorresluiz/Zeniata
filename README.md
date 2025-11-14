@@ -5,6 +5,12 @@ O sistema permite o gerenciamento completo de **colaboradores (Workers)**, ofere
 
 ---
 
+## LInk do Vídeo
+
+https://youtu.be/PmJ4N42INRg
+
+---
+
 ## 👥 Integrantes
 
 - **Eduardo Fedeli Souza** — RM550132  
