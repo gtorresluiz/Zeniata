@@ -18,7 +18,7 @@ O sistema permite o gerenciamento completo de **colaboradores (Workers)**, ofere
 - **C# 12**  
 - **.NET 8 (ASP.NET Core Web API)**  
 - **Entity Framework Core 8**  
-- **Oracle Database** (via `Oracle.EntityFrameworkCore`)**
+- **Oracle Database** (via `Oracle.EntityFrameworkCore`)
 - **Swagger (Swashbuckle) com tema customizado e logotipo próprio**
 - **API Versioning (Microsoft.AspNetCore.Mvc.Versioning)**
 - **CORS liberado para testes e consumo via Postman**
