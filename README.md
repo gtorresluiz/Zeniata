@@ -52,15 +52,15 @@ builder.Services.AddApiVersioning(options =>
 
 ## 🧱 Estrutura do Projeto
 
-📦 Zeniata
-┣ 📂 Controllers → Endpoints (WorkersController)
-┣ 📂 Data → DbContext + Mapeamentos
-┣ 📂 Models → Entidades (Worker)
-┣ 📂 wwwroot
-┃ ┣ 📂 img → Logotipo (zeniata.jpg)
-┃ ┗ 📂 swagger-ui → custom.css
-┣ 📜 Program.cs → Configurações principais
-┗ 📜 README.md
+### 📦 Zeniata
+### ┣ 📂 Controllers → Endpoints (WorkersController)
+### ┣ 📂 Data → DbContext + Mapeamentos
+### ┣ 📂 Models → Entidades (Worker)
+### ┣ 📂 wwwroot
+### ┃ ┣ 📂 img → Logotipo (zeniata.jpg)
+### ┃ ┗ 📂 swagger-ui → custom.css
+### ┣ 📜 Program.cs → Configurações principais
+### ┗ 📜 README.md
 
 ## 🔌 Conexão com o Banco de Dados Oracle
 
